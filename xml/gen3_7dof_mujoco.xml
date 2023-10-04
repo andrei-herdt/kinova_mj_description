@@ -34,13 +34,31 @@
     <light name="top" pos="0 0 2" mode="trackcom"/>
     <body name="torso" pos="0 0 0.175">
       <inertial pos="0 0 0" quat="1 0 0 0" mass="15" diaginertia="0.0488868 0.0457 0.0135132"/>
-      <geom type="box" name="torso"  size=".325 .325 .175" material="body"/>
+      <geom type="box" name="torso"  size=".325 .325 .15" material="body"/>
       <freejoint name="root"/>
       <!-- The sites are balls to be contained inside body -->
       <site name="wheel_fl" size="0.01" pos="0.315 0.315 -0.165" />
       <site name="wheel_hl" size="0.01" pos="-0.315 0.315 -0.165" />
       <site name="wheel_hr" size="0.01" pos="-0.315 -0.315 -0.165" />
       <site name="wheel_fr" size="0.01" pos="0.315 -0.315 -0.165" />
+      <!-- Wheels -->
+      <body name="wheel_fl" pos="0.275 0.275 -0.125" quat="0.707105 -0.707108 0 0">
+        <inertial pos="-9.3e-05 0.000132 -0.022905" quat="-0.0368025 0.719402 -0.0444884 0.69219" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
+        <geom name="wheel_fl_link" type="sphere" size=".05"/>
+      </body>
+      <body name="wheel_hl" pos="-0.275 0.275 -0.125" quat="0.707105 -0.707108 0 0">
+        <inertial pos="-9.3e-05 0.000132 -0.022905" quat="-0.0368025 0.719402 -0.0444884 0.69219" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
+        <geom name="wheel_hl_link" type="sphere" size=".05"/>
+      </body>
+      <body name="wheel_hr" pos="-0.275 -0.275 -0.125" quat="0.707105 -0.707108 0 0">
+        <inertial pos="-9.3e-05 0.000132 -0.022905" quat="-0.0368025 0.719402 -0.0444884 0.69219" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
+        <geom name="wheel_hr_link" type="sphere" size=".05"/>
+      </body>
+      <body name="wheel_fr" pos="0.275 -0.275 -0.125" quat="0.707105 -0.707108 0 0">
+        <inertial pos="-9.3e-05 0.000132 -0.022905" quat="-0.0368025 0.719402 -0.0444884 0.69219" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
+        <geom name="wheel_fr_link" type="sphere" size=".05"/>
+      </body>
+      <!-- Kinova arm bodies -->
       <body name="base_link" pos="0 0 0.175" quat="1 0 0 0">
         <geom mesh="base_link"/>
         <body name="shoulder_link" pos="0 0 0.15643" quat="-3.67321e-06 1 0 0">
