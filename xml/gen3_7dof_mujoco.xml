@@ -32,9 +32,9 @@
   <worldbody>
     <geom name="floor" size="0 0 .05" type="plane" material="grid" condim="3"/>
     <light name="top" pos="0 0 2" mode="trackcom"/>
-    <body name="torso" pos="0 0 0.175">
+    <body name="wheel_base" pos="0 0 0.175">
       <inertial pos="0 0 0" quat="1 0 0 0" mass="15" diaginertia="0.0488868 0.0457 0.0135132"/>
-      <geom type="box" name="torso"  size=".325 .325 .15" material="body"/>
+      <geom type="box" name="wheel_base"  size=".325 .325 .15" material="body"/>
       <freejoint name="root"/>
       <!-- The sites are balls to be contained inside body -->
       <site name="wheel_fl" size="0.01" pos="0.315 0.315 -0.165" />
