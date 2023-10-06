@@ -1,0 +1,71 @@
+<mujoco model="gen3">
+  <compiler angle="radian" meshdir="../meshes"/>
+
+  <option timestep="0.001" />
+
+  <default>
+    <joint pos="0 0 0" axis="0 0 1" damping="0.2"/>
+    <motor ctrllimited="false" forcelimited="false" />
+    <geom group="1" type="mesh" rgba="0.75294 0.75294 0.75294 1"/>
+  </default>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".1 .2 .3" rgb2=".2 .3 .4"/>
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2"/>
+    <texture name="body" type="cube" builtin="flat" mark="cross" width="128" height="128" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"/>
+    <material name="body" texture="body" texuniform="true" rgba="0.8 0.6 .4 1"/>
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="0 0 .05" type="plane" material="grid" condim="3"/>
+    <light name="top" pos="0 0 2" mode="trackcom"/>
+    <body name="wheel_base" pos="0 0 0.575">
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="50" diaginertia="0.488868 0.457 0.135132"/>
+      <geom type="box" name="wheel_base"  size=".325 .325 .15" material="body"/>
+      <freejoint name="root"/>
+      <!-- Wheels -->
+      <body name="wheel_fl" pos="0.275 0.275 -0.15" quat="0 0 0.7071 0.7071">
+        <inertial pos="-9.3e-05 0.000132 -0.022905" quat="1 0 0 0" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
+        <geom name="wheel_fl_link" type="cylinder" size=".06 0.05"/>
+        <joint name="joint_8" type="hinge"/>
+        <site name="wheel_fl" size="0.01" pos="0 -0.06 0" />
+      </body>
+      <body name="wheel_hl" pos="-0.275 0.275 -0.15"quat="0 0 0.7071 0.7071">
+        <inertial pos="-9.3e-05 0.000132 -0.022905" quat="-0.0368025 0.719402 -0.0444884 0.69219" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
+        <geom name="wheel_hl_link" type="cylinder" size=".06 0.05"/>
+        <joint name="joint_9" type="hinge"/>
+        <site name="wheel_hl" size="0.01" pos="0 -0.06 0" />
+      </body>
+      <body name="wheel_hr" pos="-0.275 -0.275 -0.15" quat="0 0 0.7071 0.7071">
+        <inertial pos="-9.3e-05 0.000132 -0.022905" quat="-0.0368025 0.719402 -0.0444884 0.69219" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
+        <geom name="wheel_hr_link" type="cylinder" size=".06 0.05"/>
+        <joint name="joint_10" type="hinge"/>
+        <site name="wheel_hr" size="0.01" pos="0 -0.06 0" />
+      </body>
+      <body name="wheel_fr" pos="0.275 -0.275 -0.15" quat="0 0 0.7071 0.7071">
+        <inertial pos="-9.3e-05 0.000132 -0.022905" quat="-0.0368025 0.719402 -0.0444884 0.69219" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
+        <geom name="wheel_fr_link" type="cylinder" size=".06 0.05"/>
+        <joint name="joint_11" type="hinge"/>
+        <site name="wheel_fr" size="0.01" pos="0 -0.06 0" />
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="joint_8_motor" joint="joint_8" />
+    <motor name="joint_9_motor" joint="joint_9" />
+    <motor name="joint_10_motor" joint="joint_10" />
+    <motor name="joint_11_motor" joint="joint_11" />
+  </actuator>
+
+  <keyframe>
+    <key name="bridge" qpos="
+      0 0 0.5 
+      1 0 0 0 
+      0
+      0. 
+      0 
+      0"/>
+  </keyframe>
+</mujoco>
