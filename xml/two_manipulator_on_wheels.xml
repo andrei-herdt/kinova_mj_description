@@ -125,26 +125,26 @@
         <inertial pos="-9.3e-05 0.000132 -0.022905" quat="1 0 0 0" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
         <geom name="wheel_fl_link" type="cylinder" size=".06 0.05"/>
         <joint name="joint_8" type="hinge"/>
-        <site name="wheel_fl" size="0.01" pos="0 -0.06 0" />
       </body>
       <body name="wheel_hl" pos="-0.275 0.275 -0.15"quat="0 0 0.7071 0.7071">
         <inertial pos="-9.3e-05 0.000132 -0.022905" quat="-0.0368025 0.719402 -0.0444884 0.69219" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
         <geom name="wheel_hl_link" type="cylinder" size=".06 0.05"/>
         <joint name="joint_9" type="hinge"/>
-        <site name="wheel_hl" size="0.01" pos="0 -0.06 0" />
       </body>
       <body name="wheel_hr" pos="-0.275 -0.275 -0.15" quat="0 0 0.7071 0.7071">
         <inertial pos="-9.3e-05 0.000132 -0.022905" quat="-0.0368025 0.719402 -0.0444884 0.69219" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
         <geom name="wheel_hr_link" type="cylinder" size=".06 0.05"/>
         <joint name="joint_10" type="hinge"/>
-        <site name="wheel_hr" size="0.01" pos="0 -0.06 0" />
       </body>
       <body name="wheel_fr" pos="0.275 -0.275 -0.15" quat="0 0 0.7071 0.7071">
         <inertial pos="-9.3e-05 0.000132 -0.022905" quat="-0.0368025 0.719402 -0.0444884 0.69219" mass="0.364" diaginertia="0.00024027 0.000222769 0.000213961"/>
         <geom name="wheel_fr_link" type="cylinder" size=".06 0.05"/>
         <joint name="joint_11" type="hinge"/>
-        <site name="wheel_fr" size="0.01" pos="0 -0.06 0" />
       </body>
+      <site name="wheel_fl" size="0.01" pos="0.275 0.275 -0.21" />
+      <site name="wheel_hl" size="0.01" pos="-0.275 0.275 -0.21" />
+      <site name="wheel_hr" size="0.01" pos="-0.275 -0.275 -0.21" />
+      <site name="wheel_fr" size="0.01" pos="0.275 -0.275 -0.21" />
     </body>
   </worldbody>
 
