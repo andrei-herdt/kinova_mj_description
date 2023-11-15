@@ -146,6 +146,11 @@
       <site name="wheel_hr" size="0.01" pos="-0.275 -0.275 -0.21" />
       <site name="wheel_fr" size="0.01" pos="0.275 -0.275 -0.21" />
     </body>
+    <body name="wall_panel" pos="1 0 2" quat="0.7071 0 0 0.7071">
+      <freejoint name="wall_panel_joint"/>
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="5" diaginertia="0.488868 0.457 0.135132"/>
+      <geom type="box" name="wall_panel"  size="1 .1 1" material="body"/>
+    </body>
   </worldbody>
 
   <actuator>
@@ -169,6 +174,8 @@
     <motor name="joint_9_motor" joint="joint_9" />
     <motor name="joint_10_motor" joint="joint_10" />
     <motor name="joint_11_motor" joint="joint_11" />
+    <!-- adhesion -->
+    <adhesion name="adhere_right_arm" body="ee" ctrlrange="0 1" gain="50"/>
   </actuator>
 
   <sensor>
@@ -182,6 +189,9 @@
       1 0 0 0 
       0 1 -6 1.6 3 -0.5 0 
       0 1 -6 1.6 3 -0.5 0 
-      0 0 0 0"/>
+      0 0 0 0
+      1 0 1
+      0.7071 0 0 0.7071
+      "/>
   </keyframe>
 </mujoco>
