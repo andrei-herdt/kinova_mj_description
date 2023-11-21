@@ -181,6 +181,8 @@
   <sensor>
     <force name="kinova_EEForceSensor_fsensor" site="ee" />
     <torque name="kinova_EEForceSensor_tsensor" site="ee" />
+    <force name="kinova_EEForceSensor_fsensor_left" site="ee_left" />
+    <torque name="kinova_EEForceSensor_tsensor_left" site="ee_left" />
   </sensor>
 
   <keyframe>
